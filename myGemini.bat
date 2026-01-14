@@ -10,31 +10,39 @@ echo ^|  (1) game designer       ^|
 echo ^|  (2) programmer          ^|
 echo +--------------------------+
 echo.
-set /P OPTION=Option:
+set /P OPTION=Select your character:
 set RULES_FILE=rules/rules.txt
 
-IF %OPTION%==1 (
-   set SYSTEM_FILE=system/system_gamer.txt
-) ELSE IF %OPTION%==2 (
-   set SYSTEM_FILE=system/system_programmer.txt
-) ELSE (
-   goto EOF
-)
+if %OPTION%==1 goto GAMER
+if %OPTION%==2 goto PROGRAMMER
 
+goto EOF
+
+:GAMER
+set ROLE_FILE=roles/role_gamer.txt
+goto MAIN
+
+:PROGRAMMER
+set ROLE_FILE=roles/role_programmer.txt
+goto MAIN
+
+
+:MAIN
 setlocal EnableDelayedExpansion
 
 set RULES=
 for /F "usebackq tokens=*" %%A in (%RULES_FILE%) do (
    set RULES=!RULES!%%A\n
 )
-set SYSTEM=
-for /f "tokens=*" %%A in (%SYSTEM_FILE%) do (
-   set SYSTEM=!SYSTEM!%%A\n
+set ROLE=
+for /f "tokens=*" %%A in (%ROLE_FILE%) do (
+   set ROLE=!ROLE!%%A\n
 )
 
-set INIT_INSTRU=%SYSTEM%%RULES%
+set INIT_INSTRU=%ROLE%%RULES%
+echo %INIT_INSTRU%
 
-gemini -i %INIT_INSTRU%
+rem gemini -i %INIT_INSTRU%
 
 :EOF
 exit /b

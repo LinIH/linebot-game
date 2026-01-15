@@ -40,9 +40,9 @@ for /f "tokens=*" %%A in (%ROLE_FILE%) do (
 )
 
 set INIT_INSTRU=%ROLE%%RULES%
-echo %INIT_INSTRU%
+rem echo %INIT_INSTRU%
 
-rem gemini -i %INIT_INSTRU%
+gemini -i %INIT_INSTRU%
 
 :EOF
 exit /b

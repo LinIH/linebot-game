@@ -1,29 +1,33 @@
-# Project: LINE Bot RPG Assistant
+# Project: LINE Bot RPG
 
 ## Directory Overview
 
-This directory contains a set of scripts and configuration files for interacting with the Gemini CLI (`gemini`). The primary purpose is to set up a specific context for the AI to act as either a game designer or a programmer to assist in the development of a LINE Bot-based RPG. The game's concept and specifications are detailed in `spec.md`.
+This directory contains the design specification for a LINE Bot-based RPG game. The core of the project is the `spec.md` file, which outlines the game's mechanics, features, and overall concept.
+
+This project is currently in the design phase. There is no source code yet.
 
 ## Key Files
 
 *   **`spec.md`**: The core design document for the LINE Bot RPG. It outlines game mechanics like registration, combat, crafting, and quests. This file serves as the foundational knowledge for the project.
-*   **`myGemini.bat`**: The main entry point script. It prompts the user to select a persona (game designer or programmer), loads the corresponding role and rules, and then launches the `gemini` CLI with that context.
-*   **`roles/`**: This directory contains the persona definitions for the AI.
-    *   `role_gamer.txt`: Instructs the AI to act as a senior game designer.
-    *   `role_programmer.txt`: Instructs the AI to act as a senior programmer.
-*   **`rules/rules.txt`**: Contains a set of rules that the AI must follow during the interaction.
 
-## Usage
+## Development
 
-To start an interactive session with the AI assistant, run the `myGemini.bat` script:
+### Next Steps
 
-```bash
-myGemini.bat
-```
+The next step for this project is to start implementing the game based on the `spec.md`. Here are some suggestions for getting started:
 
-You will be prompted to choose a character:
+1.  **Choose a Technology Stack:** Since this is a LINE Bot application, you will need a backend server to handle the bot's logic. Popular choices include:
+    *   **Node.js:** with the `@line/bot-sdk` library.
+    *   **Python:** with the `line-bot-sdk` library.
+    *   **Go:** with the `line-bot-sdk-go` library.
 
-1.  **Game Designer:** Select this to get help with game design concepts, balancing, and mechanics based on the `spec.md`.
-2.  **Programmer:** Select this to get help with technical implementation, code examples, and architecture for the LINE Bot game.
+2.  **Set up a LINE Developers Account:** You will need to create a LINE Developers account and a new "Messaging API" channel to get the necessary credentials (Channel Access Token and Channel Secret) for your bot.
 
-The script will then launch the Gemini CLI with the appropriate persona and rule set, ready for your questions.
+3.  **Implement the Core Features:** Start by implementing the core features described in `spec.md`, such as:
+    *   Player registration (`註冊`).
+    *   Combat system (`討伐`).
+    *   Gathering and crafting systems (`探索`, `製作`).
+
+### Running and Testing
+
+Once the development has started, this section should be updated with instructions on how to build, run, and test the project.

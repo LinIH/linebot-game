@@ -178,3 +178,17 @@ CREATE TABLE Market (
     FOREIGN KEY (item_id) REFERENCES ListItem(item_id)
 );
 ```
+
+## 11. Command
+
+定義所有指令
+
+``` sql
+drop table rpgame.command;
+CREATE TABLE rpgame.Command (
+    id INTEGER
+    command TEXT,
+    subcmd1 TEXT,
+    method TEXT
+);
+```

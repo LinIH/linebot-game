@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 @SpringBootApplication
 public class RpgameApplication {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		// 啟動 Spring Boot 應用並獲取 ApplicationContext
 		ApplicationContext context = SpringApplication.run(RpgameApplication.class, args);
 		MainController mc = context.getBean(MainController.class);

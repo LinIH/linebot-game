@@ -1,5 +1,8 @@
 package com.example.rpgame.action;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class MarketActionHandler {
 
     public void showMarket(){

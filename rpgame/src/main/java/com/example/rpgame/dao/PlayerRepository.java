@@ -3,5 +3,6 @@ package com.example.rpgame.dao;
 import com.example.rpgame.entity.Player;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+
 public interface PlayerRepository extends JpaRepository<Player, String> {
 }

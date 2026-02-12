@@ -16,7 +16,7 @@ public class RpgameApplication {
 		RpgCharacter rpgCharacter = context.getBean(RpgCharacter.class);
 
 		Scanner sc = new Scanner(System.in);
-		
+
 		System.out.println("====== 遊戲命令輸入 ======");
 		System.out.println("輸入 '註冊' 進行玩家登入");
 		System.out.println("輸入 '狀態' 查詢玩家狀態");
@@ -25,9 +25,14 @@ public class RpgameApplication {
 		System.out.println("輸入 '-1' 結束遊戲");
 		System.out.println("==========================");
 
+		String userId = "U123456789"; // 模擬的 userId
 		String input = "";
 		while(!(input = sc.nextLine()).equals("-1")){
-			mc.acceptCommand(input);
+			try{
+				mc.acceptCommand(userId, input);
+			} catch (Exception e){
+				System.out.println(e.getMessage());
+			}
 		}
 		System.out.println("---end...");
 		sc.close(); // 關閉 Scanner
